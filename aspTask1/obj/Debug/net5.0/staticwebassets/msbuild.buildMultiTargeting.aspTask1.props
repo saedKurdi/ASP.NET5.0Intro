@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\aspTask1.props" />
+</Project>

@@ -1,0 +1,19 @@
+﻿@model List<aspTask1.Entities.HotMeal>
+<section>
+    <span style="display:flex;gap:30px;justify-content:center;align-items:center">
+        <a href="/home/index">Home</a>
+        <a href="/home/drinks">Drinks</a>
+        <a href="/home/fastFoods">Fast Foods</a>
+    </span>
+    <h2>All Fast-Foods : </h2>
+    <ul style="display:flex;flex-wrap:wrap;align-items:center;gap:30px">
+        @foreach (var meal in Model)
+        {
+            <li style="display:flex;flex-direction:column;gap:15px;border:1px solid springgreen;padding:10px">
+                <h3>@meal.Name</h3>
+                <p>Price : $@meal.Price</p>
+                <p>Description : @meal.Description</p>
+            </li>
+        }
+    </ul>
+</section>

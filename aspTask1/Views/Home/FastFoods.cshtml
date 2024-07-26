@@ -1,0 +1,20 @@
+﻿@model List<aspTask1.Entities.FastFood>
+<section>
+    <span style="display:flex;gap:30px;justify-content:center;align-items:center">
+        <a href="/home/index">Home</a>
+        <a href="/home/hotMeals">Hot Meals</a>
+        <a href="/home/drinks">Drinks</a>
+    </span>
+    <h2>All Fast-Foods : </h2>
+    <ul style="display:flex;flex-wrap:wrap;align-items:center;gap:30px">
+        @foreach (var food in Model)
+        {
+            <li style="display:flex;flex-direction:column;gap:15px;border:1px solid springgreen;padding:10px">
+                <h3>@food.Name</h3>
+                <p>Price : $@food.Price</p>
+                <p>Description : @food.Description</p>
+                <p>CCALs (per 100 grams) : @food.Ccal ccals</p>
+            </li>
+        }
+    </ul>
+</section>

@@ -1,0 +1,43 @@
+﻿@model aspTask1.Models.IndexViewModel
+<section>
+   <span style="display:flex;gap:30px;justify-content:center;align-items:center">
+       <a href="/home/hotMeals">Hot Meals</a>
+       <a href="/home/drinks">Drinks</a>
+       <a href="/home/fastFoods">Fast Foods</a>
+   </span>
+   <h2>All Drinks : </h2>
+   <ul style="display:flex;flex-wrap:wrap;align-items:center;gap:30px">
+        @foreach (var drink in Model.Drinks)
+        {
+            <li style="display:flex;flex-direction:column;gap:15px;border:1px solid springgreen;padding:10px">
+                <h3>@drink.Name</h3>
+                <p>Price : $@drink.Price</p>
+                <p>Description : @drink.Description</p>
+                <p>Is Hot : ({@drink.IsHot ? "Yes" : "No"})</p>
+            </li>
+        }
+   </ul>
+    <h2>All Hot-Meals : </h2>
+    <ul style="display:flex;flex-wrap:wrap;align-items:center;gap:30px">
+        @foreach (var meal in Model.HotMeals)
+        {
+            <li style="display:flex;flex-direction:column;gap:15px;border:1px solid springgreen;padding:10px">
+                <h3>@meal.Name</h3>
+                <p>Price : $@meal.Price</p>
+                <p>Description : @meal.Description</p>
+            </li>
+        }
+    </ul>
+    <h2>All Fast-Foods : </h2>
+    <ul style="display:flex;flex-wrap:wrap;align-items:center;gap:30px">
+        @foreach (var food in Model.FastFoods)
+        {
+            <li style="display:flex;flex-direction:column;gap:15px;border:1px solid springgreen;padding:10px">
+                <h3>@food.Name</h3>
+                <p>Price : $@food.Price</p>
+                <p>Description : @food.Description</p>
+                <p>CCAL count (per 100 grams) : @food.Ccal ccals </p>
+            </li>
+        }
+    </ul>
+</section>
